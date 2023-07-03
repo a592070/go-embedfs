@@ -1,24 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import {useLayoutEffect} from "react";
+import {Link} from "react-router-dom";
 
 function App() {
+    useLayoutEffect(() => {
+        document.title = 'App';
+    }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+            <Link to={`/about`}>About</Link>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <h1>Hell!</h1>
-      </header>
+        <p>
+            <Link to={`/404`}>404</Link>
+        </p>
     </div>
   );
 }
